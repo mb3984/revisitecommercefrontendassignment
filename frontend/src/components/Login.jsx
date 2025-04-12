@@ -13,7 +13,7 @@ const Login = () => {
     try {
       const res = await API.post("/auth/login", form);
       localStorage.setItem("token", res.data.token);
-      alert("User Login Successfully");
+      alert("User Login Successfully..");
       navigate("/dashboard");
     } catch (err) {
       alert("Login failed");
