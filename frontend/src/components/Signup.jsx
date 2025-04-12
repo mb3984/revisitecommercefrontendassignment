@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import API from "../api/api";
 import { Link } from "react-router-dom"; // Import Link for navigation
 import "./Signup.css"; // Import CSS for styling
 
@@ -11,12 +10,33 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await API.post("/auth/signup", form);
-      alert("User signup successful.Please Login");
+      const response = await fetch(
+        "https://revisitecommercebackendproject.onrender.com/api/auth/signup",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
+
+      // Check if the response status is OK (status 2xx)
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(
+          errorData.message || "Signup failed. User already exists"
+        );
+      }
+
+      // If the request was successful, parse the response data
+      const data = await response.json();
+      console.log(data);
+      alert("User signup successful. Please Login");
       navigate("/login");
     } catch (err) {
       console.log(err);
-      alert("Signup failed. User already exists");
+      alert(err.message); // Show the error message in case of failure
     }
   };
 

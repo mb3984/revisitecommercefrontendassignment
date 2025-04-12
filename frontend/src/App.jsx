@@ -4,7 +4,6 @@ import Login from "./components/Login";
 import Signup from "./components/Signup";
 import Dashboard from "./components/Dashboard";
 import NotFound from "./components/NotFound";
-import PrivateRoute from "./utils/PrivateRoute";
 import AddCategory from "./components/AddCategory";
 import EditCategory from "./components/EditCategory";
 
@@ -17,30 +16,9 @@ function App() {
       {/* Other routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
-      <Route
-        path="/dashboard"
-        element={
-          <PrivateRoute>
-            <Dashboard />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/add-category"
-        element={
-          <PrivateRoute>
-            <AddCategory />
-          </PrivateRoute>
-        }
-      />
-      <Route
-        path="/edit-category/:id"
-        element={
-          <PrivateRoute>
-            <EditCategory />
-          </PrivateRoute>
-        }
-      />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/add-category" element={<AddCategory />} />
+      <Route path="/edit-category/:id" element={<EditCategory />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
