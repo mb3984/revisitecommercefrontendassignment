@@ -9,7 +9,7 @@ const AddCategory = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await API.post("/categories", form);
+    await API.post("/categories/", form);
     alert("Category Added Successfully");
     navigate("/dashboard");
   };
