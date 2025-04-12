@@ -16,7 +16,7 @@ const Login = () => {
       alert("User Login Successfully.");
       navigate("/dashboard");
     } catch (err) {
-      alert("Login failed");
+      alert("Login failed..");
       console.log(err);
     }
   };
