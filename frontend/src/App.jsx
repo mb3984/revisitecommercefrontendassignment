@@ -11,14 +11,14 @@ function App() {
   return (
     <Routes>
       {/* Default route to display the Signup page initially */}
-      <Route path="/" element={<Signup />} />{" "}
+      <Route exact path="/" element={<Signup />} />{" "}
       {/* Default route for the Signup page */}
       {/* Other routes */}
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
       <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/add-category" element={<AddCategory />} />
-      <Route path="/edit-category/:id" element={<EditCategory />} />
+      <Route exact path="/add-category" element={<AddCategory />} />
+      <Route exact path="/edit-category/:id" element={<EditCategory />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   );
