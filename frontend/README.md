@@ -1,12 +1,13 @@
-# React + Vite
+This is the frontend part of an e-commerce dashboard built with React. It allows users to log in, manage categories, and access a private dashboard with protected routes. It communicates with a backend server that handles user authentication and category management.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Features User Authentication (Login) Private Dashboard Add, Edit, and View Categories Redirect to login page if not authenticated Responsive Design Tech Stack Frontend: React React Router DOM Axios (for API requests) CSS for styling Getting Started To get started with this frontend project, you'll need to install the dependencies and run the development server.
 
-Currently, two official plugins are available:
+Prerequisites Make sure you have the following installed:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Node.js (v16 or higher) npm or yarn (for package management) Installation Clone the repository
 
-## Expanding the ESLint configuration
+git clone https://github.com/yourusername/e-commerce-dashboard-frontend.git Install dependencies: Navigate to the project directory:
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+cd revisitfrontendproject npm install
+
+Start the development server: npm run dev
